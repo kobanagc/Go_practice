@@ -66,4 +66,30 @@ func main() {
 	fmt.Println(arr3[0][1])
 	fmt.Println(arr3[1][0])
 	fmt.Println(arr3[1][1])
+
+
+	c := 10
+	d := 2
+	fmt.Println(c + d)
+	fmt.Println(c - d)
+	fmt.Println(c * d)
+	fmt.Println(c / d)
+	fmt.Println(c % d)
+
+	fmt.Println(c > d)
+	fmt.Println(c < d)
+	fmt.Println(c == d)
+	fmt.Println(c != d)
+	fmt.Println(c > 8 && c < 20)
+	fmt.Println(c > 8 || c < 20)
+
+	c += 10
+	d += b
+	fmt.Println(c)
+	fmt.Println(d)
+
+	c ++
+	d --
+	fmt.Println(c)
+	fmt.Println(d)
 }
