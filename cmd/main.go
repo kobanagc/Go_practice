@@ -129,4 +129,52 @@ func main() {
 			fmt.Println(num)
 		}
 	}
+
+	hello()
+	greeting("John")
+	fmt.Println(calc(10, 20))
+	fmt.Println(calc2(10, 20))
+	fmt.Println(calc3(10, 20))
+	fmt.Println(calc4(10, 20))
+
+	// 無名関数の場合は関数の中に書ける（呼び出しなしで即実行）
+	func () {
+		fmt.Println("no name function!!")
+	}()
+
+	// 関数を変数に代入することも可能
+	f := func () {
+		fmt.Println("関数を変数に代入!!")
+	}
+	f()
+}
+
+// 関数は必ずトップレベルに書く（関数内関数はできない）
+// 関数の定義は呼び出しよりも下に書いてOK
+func hello() {
+	fmt.Println("Hello World!")
+}
+
+func greeting(name string) {
+	fmt.Println("Hello " + name + "!")
+}
+
+func calc(num1 int, num2 int) int {
+	return num1 + num2
+}
+
+func calc2 (num1, num2 int) (int, int) {
+	return num1 * num2, num1 + num2
+}
+
+func calc3 (num1, num2 int) (int, int) {
+	sum := num1 + num2
+	sub := num1 - num2
+	return sum , sub
+}
+
+func calc4 (num1, num2 int) (sum, sub int) { // 戻り値でsum, subを宣言しているので:=（宣言+代入）ではなく=（代入）で書く
+	sum = num1 + num2
+	sub = num1 - num2
+	return sum, sub // 戻り値でsum, subを宣言しているためreturnの後は省略可能
 }
