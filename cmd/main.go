@@ -106,4 +106,27 @@ func main() {
 	} else {
 		fmt.Println("age > c")
 	}
+
+	for i := 0; i < 10; i++ {
+		if i == 2 {
+			continue
+		}
+		if i == 5 {
+			break
+		}
+		fmt.Println(i)
+	}
+
+	for i := 0; i < 2; i++ {
+		for j := 0; j < 2; j++ {
+			fmt.Println(i, "-", j)
+		}
+	}
+
+	num_arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	for _, num := range num_arr { // _はブランク演算子。通常iなどのindexが入るがforの中でiを使わない場合に_を使う
+		if num % 2 == 0 {
+			fmt.Println(num)
+		}
+	}
 }
