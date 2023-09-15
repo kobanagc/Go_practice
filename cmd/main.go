@@ -92,4 +92,18 @@ func main() {
 	d --
 	fmt.Println(c)
 	fmt.Println(d)
+
+	if c > d {
+		fmt.Println("c > d")
+	} else if c < d {
+		fmt.Println("c < d")
+	} else {
+		fmt.Println("c == d")
+	}
+
+	if age := 10; age < c { // ifの後に変数を宣言することもできる。しかしスコープはif文の中。
+		fmt.Println("age < c")
+	} else {
+		fmt.Println("age > c")
+	}
 }
