@@ -46,4 +46,24 @@ func main() {
 	fmt.Println(reflect.TypeOf(num_true))
 	fmt.Println(num_false)
 	fmt.Println(reflect.TypeOf(num_false))
+
+	arr := [3]string {"a", "b", "c"} // []の中は要素数
+	fmt.Println(arr[0])
+	fmt.Println(arr[1])
+	fmt.Println(arr[2])
+
+	arr[2] = "d"
+	fmt.Println(arr[2])
+	fmt.Println(arr)
+
+	arr2 := [...]string{"e", "f", "g"} // 要素数は「...」で省略可能だが、「...」も省略できる
+	fmt.Println(arr2[0])
+	fmt.Println(arr2[1])
+	fmt.Println(arr2[2])
+
+	arr3 := [][]string{{"h", "i"}, {"j", "k"}} //　多次元配列の場合は「...」は使えない
+	fmt.Println(arr3[0][0])
+	fmt.Println(arr3[0][1])
+	fmt.Println(arr3[1][0])
+	fmt.Println(arr3[1][1])
 }
