@@ -147,6 +147,27 @@ func main() {
 		fmt.Println("関数を変数に代入!!")
 	}
 	f()
+
+	// 構造体
+	type Student struct {
+		name string
+		math, english float64
+	}
+
+	var student Student
+	student.name = "John"
+	student.math = 80
+	student.english = 70
+	fmt.Println(student)
+
+	student2 := Student{"Ken", 90, 80} // フィールド(nameなど)が順番通りだったら引数にフィールド名を書かなくてよい
+	fmt.Println(student2)
+
+	student3 := Student{
+		english: 90, // フィールドを引数に書いていれば、フィールド名の順番は不問
+		name: "Mike",
+		math: 100,
+	}
 }
 
 // 関数は必ずトップレベルに書く（関数内関数はできない）
