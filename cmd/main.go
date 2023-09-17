@@ -148,12 +148,6 @@ func main() {
 	}
 	f()
 
-	// 構造体
-	type Student struct {
-		name string
-		math, english float64
-	}
-
 	var student Student
 	student.name = "John"
 	student.math = 80
@@ -168,6 +162,11 @@ func main() {
 		name: "Mike",
 		math: 100,
 	}
+
+	student3.avg()
+	student3.avg2(100, 100)
+	fmt.Println(student3.avg3(60, 50))
+	fmt.Println(student3.avg4(60, 50))
 }
 
 // 関数は必ずトップレベルに書く（関数内関数はできない）
@@ -198,4 +197,28 @@ func calc4 (num1, num2 int) (sum, sub int) { // 戻り値でsum, subを宣言し
 	sum = num1 + num2
 	sub = num1 - num2
 	return sum, sub // 戻り値でsum, subを宣言しているためreturnの後は省略可能
+}
+
+// 構造体
+type Student struct {
+	name string
+	math, english float64
+}
+
+// メソッド（= 構造体に紐づけられた関数）
+func (s Student) avg() {
+	fmt.Println(s.name, (s.math + s.english) / 2)
+}
+
+func (s Student) avg2(math, english float64) { // フィールドを引数に書いていれば、メソッドのなかでs.を書かなくて良い
+	fmt.Println(s.name, (math + english) / 2)
+}
+
+func (s Student) avg3(math, english float64) float64 {
+	return (math + english) / 2
+}
+
+func (s Student) avg4(math, english float64) (average_score float64) {
+	average_score = (math + english) / 2
+	return
 }
